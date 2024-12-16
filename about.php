@@ -21,20 +21,24 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="home.php">Home</a></li>
                     <li><a href="#">Dashboard</a></li>
                     <li><a href="#" class="active">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
             </nav>
         </div>
         <div class="buttons">
-            <button class="btn-outline">
-                <i class="fa-regular fa-user"></i> Sign Up
-            </button>
-            <button class="btn-solid">
-                <i class="fa-solid fa-right-to-bracket"></i> Sign In
-            </button>
+            <a href="signup.php">
+                <button class="btn-outline">
+                    <i class="fa-regular fa-user"></i> Sign Up
+                </button>
+            </a>
+            <a href="signin.php">
+                <button class="btn-solid">
+                    <i class="fa-solid fa-right-to-bracket"></i> Sign In
+                </button>
+            </a>
         </div>
     </header>
 

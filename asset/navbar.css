@@ -6,11 +6,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
-    line-height: 1.6;
-    background-color: #f9f9f9;
-}
-
 /* Header dan Navbar */
 header {
     display: flex;
@@ -94,42 +89,4 @@ nav ul li a:hover, nav ul li a.active {
     height: 30px;
     border-radius: 50%;
     cursor: pointer;
-}
-
-/* Contact Section Full Layar */
-.contact-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #fff;
-    text-align: center;
-    padding: 0 20px;
-}
-
-.contact-title {
-    font-size: 1rem;
-    color: #555;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-.contact-info {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.contact-icons i {
-    font-size: 1.5rem;
-    color: #555;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-    cursor: pointer;
-}
-
-.contact-icons i:hover {
-    color: #007bff;
 }
