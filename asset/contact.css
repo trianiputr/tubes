@@ -1,0 +1,112 @@
+/* Reset dan Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+/* Navbar Utama */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo dan Navigasi Kiri */
+.logo-nav {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-right: 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin-left: 20px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}
+
+/* Ikon Sudut Kanan */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Jarak antar ikon */
+}
+
+.nav-icons .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-icons .icon:hover {
+    color: #6f42c1; /* Warna ikon saat hover */
+    transform: scale(1.1);
+}
+
+/* Ikon Profil */
+.nav-icons .profile img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    transition: border-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-icons .profile img:hover {
+    border-color: #6f42c1;
+    transform: scale(1.1);
+}
