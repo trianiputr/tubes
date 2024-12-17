@@ -9,7 +9,7 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Link CSS -->
-    <link rel="stylesheet" href="asset/contact.css">
+    <link rel="stylesheet" href="asset/dashboarduser.css">
 </head>
 <body>
     <header>
@@ -22,9 +22,9 @@
             <nav>
                 <ul>
                     <li><a href="home.php">Home</a></li>
-                    <li><a href="dashboarduser.php">Dashboard</a></li>
+                    <li><a href="#"class="active">Dashboard</a></li>
                     <li><a href="about1.php">About</a></li>
-                    <li><a href="#" class="active">Contact</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -35,26 +35,6 @@
             <img src="asset/Gambar4.png" alt="Profile" class="profile-img">
         </div>
     </header>
-
-    <!-- Informasi Kontak -->
-    <section class="contact-section">
-        <div class="contact-container">
-            <h2 class="contact-title">E-MAIL</h2>
-            <p class="contact-info">putryanihk@gmail.com</p>
-
-            <h2 class="contact-title">PHONE</h2>
-            <p class="contact-info">+62 85298975402</p>
-
-            <h2 class="contact-title">SOCIALS</h2>
-            <div class="contact-icons">
-                <a href="https://web.facebook.com/siaman.jogja/?_rdc=1&_rdr" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com/titipbarangkos/" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-        </div>
-    </section>
+    
 </body>
 </html>

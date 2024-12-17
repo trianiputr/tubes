@@ -1,4 +1,4 @@
-/* Reset CSS */
+/* Reset dan Font */
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@ body {
     background-color: #f9f9f9;
 }
 
-/* Navbar */
+/* Header dan Navbar */
 header {
     display: flex;
     justify-content: space-between;
@@ -25,12 +25,9 @@ header {
     z-index: 1000;
 }
 
-/* Logo */
 .logo-nav {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    width: 100%;
 }
 
 .logo {
@@ -48,14 +45,13 @@ header {
     font-size: 1.2rem;
     font-weight: 600;
     color: #333;
-    margin-right: 20px; /* Add margin between logo and nav */
+    margin-right: 20px;
 }
 
-/* Navigasi */
 nav ul {
     display: flex;
     list-style: none;
-    margin-left: 40px; /* Make space between logo and navigation items */
+    margin-left: 20px;
 }
 
 nav ul li {
@@ -66,59 +62,38 @@ nav ul li a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}
+
+.right-icons {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-right: 15px;
+    font-size: 1.2rem;
+    color: #333;
+    cursor: pointer;
     transition: color 0.3s ease;
-    padding-bottom: 5px; /* Spacing for underline */
-    border-bottom: 2px solid transparent; /* Default: No underline */
 }
 
-nav ul li a:hover,
-nav ul li a.active {
+.icon:hover {
     color: #007bff;
-    border-bottom: 2px solid #007bff; /* Garis bawah biru pada tab aktif */
 }
 
-/* Tombol di Kanan */
-.buttons {
-    display: flex;
-    align-items: center;
-}
-
-.buttons .btn-outline {
-    padding: 6px 15px;
-    border: 2px solid #007bff;
-    background: transparent;
-    color: #007bff;
-    font-weight: 600;
-    border-radius: 20px;
-    margin-right: 10px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+.profile-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
     cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.buttons .btn-outline:hover {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.buttons .btn-solid {
-    padding: 6px 15px;
-    background-color: #007bff;
-    color: #fff;
-    font-weight: 600;
-    border: none;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.buttons .btn-solid:hover {
-    background-color: #0056b3;
 }
 
 /* Hero Section */

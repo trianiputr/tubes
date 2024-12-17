@@ -1,68 +1,102 @@
+<?php
+session_start();
+require_once 'db.php'; // Memanggil koneksi database
+
+$message = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Mengambil data dari form
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
+    $remember = isset($_POST['remember']);
+
+    // Validasi input kosong
+    if (empty($username) || empty($email) || empty($phone) || empty($password) || empty($confirm_password)) {
+        $message = "Please fill in all fields.";
+    } elseif ($password !== $confirm_password) {
+        $message = "Passwords do not match.";
+    } else {
+        // Hash password untuk keamanan
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+        // Query untuk menyimpan data user
+        $stmt = $conn->prepare("INSERT INTO users (username, email, phone, password, role) VALUES (?, ?, ?, ?, ?)");
+        $role = 'user'; // Default role
+        $stmt->bind_param("sssss", $username, $email, $phone, $hashed_password, $role);
+
+        if ($stmt->execute()) {
+            // Simpan sesi pengguna setelah berhasil mendaftar
+            $_SESSION['user_id'] = $conn->insert_id;
+            $_SESSION['email'] = $email;
+            $_SESSION['role'] = $role;
+
+            // Set cookie jika pengguna memilih "Remember Me"
+            if ($remember) {
+                setcookie('user_id', $conn->insert_id, time() + (86400 * 30), "/");
+                setcookie('role', $role, time() + (86400 * 30), "/");
+            }
+
+            // Redirect ke halaman dashboard setelah berhasil sign up
+            header("Location: home.php");
+            exit;
+        } else {
+            $message = "Sign up failed. Please try again.";
+        }
+
+        $stmt->close();
+    }
+}
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Link CSS -->
-    <link rel="stylesheet" href="asset/signup.css">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="asset/signup.css"> 
 </head>
 <body>
     <div class="container">
         <div class="login-container">
-            <div class="form-wrapper">
-                <h2 class="title">Sign Up</h2>
-                <p class="subtitle">Buat akun Anda untuk solusi penyimpanan yang aman!</p>
-
-                <!-- Input Form -->
-                <form>
-                    <!-- Username -->
-                    <div class="input-group">
-                        <i class="fa-solid fa-user"></i>
-                        <input type="text" placeholder="Your username" required>
-                    </div>
-
-                    <!-- Email -->
-                    <div class="input-group">
-                        <i class="fa-solid fa-envelope"></i>
-                        <input type="email" placeholder="Your email address" required>
-                    </div>
-
-                    <!-- Phone Number -->
-                    <div class="input-group">
-                        <i class="fa-solid fa-phone"></i>
-                        <input type="tel" placeholder="Your phone number" required>
-                    </div>
-
-                    <!-- Password -->
-                    <div class="input-group">
-                        <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="Enter your password" required>
-                    </div>
-
-                    <!-- Confirm Password -->
-                    <div class="input-group">
-                        <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="Confirm your password" required>
-                    </div>
-
-                    <!-- Remember Me -->
-                    <div class="options">
-                        <label>
-                            <input type="checkbox"> Remember Me
-                        </label>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <button type="submit" class="login-btn">Sign Up</button>
-                </form>
-
-                <p class="signup-text">Sudah punya akun? <a href="signin.php" class="signup-link">Sign In</a></p>
-            </div>
+            <h2 class="title">Sign Up</h2>
+            <p class="subtitle">Create your account</p>
+            <?php if ($message) { echo "<div class='message error'>$message</div>"; } ?>
+            <form method="POST">
+                <!-- Input untuk username -->
+                <div class="input-group">
+                    <input type="text" name="username" placeholder="Username" required>
+                </div>
+                <!-- Input untuk email -->
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <!-- Input untuk phone -->
+                <div class="input-group">
+                    <input type="text" name="phone" placeholder="Phone" required>
+                </div>
+                <!-- Input untuk password -->
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <!-- Input untuk konfirmasi password -->
+                <div class="input-group">
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                </div>
+                <!-- Checkbox untuk Remember Me -->
+                <div class="options">
+                    <input type="checkbox" name="remember" id="remember">
+                    <label for="remember">Remember Me</label>
+                </div>
+                <!-- Tombol Sign Up -->
+                <button type="submit" class="login-btn">Sign Up</button>
+            </form>
+            <p class="signup-text">Already have an account? <a href="signin.php" class="signup-link">Log In</a></p>
         </div>
     </div>
 </body>

@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TitipKos</title>
-    <!-- Link Google Fonts -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Link FontAwesome untuk ikon -->
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Link CSS -->
-    <link rel="stylesheet" href="asset/about.css">
+    <link rel="stylesheet" href="asset/about1.css">
 </head>
 <body>
-    <!-- Header/Navbar -->
     <header>
+        <!-- Logo dan Navigasi -->
         <div class="logo-nav">
             <div class="logo">
                 <img src="asset/Gambar2.png" alt="Logo" class="logo-img">
@@ -22,23 +22,17 @@
             <nav>
                 <ul>
                     <li><a href="home.php">Home</a></li>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#" class="active">About</a></li>
+                    <li><a href="dashboarduser.php">Dashboard</a></li>
+                    <li><a href="#"class="active">About</a></li>
                     <li><a href="contact.php">Contact</a></li>
                 </ul>
             </nav>
         </div>
-        <div class="buttons">
-            <a href="signup.php">
-                <button class="btn-outline">
-                    <i class="fa-regular fa-user"></i> Sign Up
-                </button>
-            </a>
-            <a href="signin.php">
-                <button class="btn-solid">
-                    <i class="fa-solid fa-right-to-bracket"></i> Sign In
-                </button>
-            </a>
+        <!-- Ikon Notifikasi, Search, dan Foto Profil -->
+        <div class="right-icons">
+            <i class="fas fa-search icon"></i>
+            <i class="fas fa-bell icon"></i>
+            <img src="asset/Gambar4.png" alt="Profile" class="profile-img">
         </div>
     </header>
 
@@ -48,9 +42,9 @@
         <div class="content">
             <h1>Solusi Penitipan yang Mudah & Aman</h1>
             <p>Simpan barang Anda dengan aman menggunakan solusi gudang terorganisir dari TitipKos</p>
-            <a href="#" class="btn-start">Start Now</a>
         </div>
     </section>
+
     <!-- About Us Section -->
     <section class="about-us">
         <div class="container">
@@ -87,5 +81,6 @@
             </div>
         </div>
     </section>
+    
 </body>
 </html>

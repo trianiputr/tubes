@@ -60,19 +60,41 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="home.php" class="active">Home</a></li>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="about.php">About</a></li>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="dashboarduser.php">Dashboard</a></li>
+                    <li><a href="about1.php">About</a></li>
                     <li><a href="contact.php">Contact</a></li>
                 </ul>
             </nav>
         </div>
-        <!-- Ikon Notifikasi, Search, dan Foto Profil -->
+       <!-- Ikon Notifikasi, Search, dan Foto Profil -->
         <div class="right-icons">
             <i class="fas fa-search icon"></i>
             <i class="fas fa-bell icon"></i>
-            <img src="asset/Gambar4.png" alt="Profile" class="profile-img">
+            <a href="#" id="profile-link">
+                <img src="asset/Gambar4.png" alt="Profile" class="profile-img">
+            </a>
         </div>
+
+        <script>
+            // Simulasi status login (true jika user login, false jika tidak login)
+            const isLoggedIn = <?php echo isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] ? 'true' : 'false'; ?>;
+
+            // Elemen link profil
+            const profileLink = document.getElementById('profile-link');
+
+            // Jika sudah login, arahkan ke halaman profil.php
+            if (isLoggedIn) {
+                profileLink.setAttribute('href', 'profil.php');
+            } else {
+                // Jika belum login, arahkan ke halaman signin.php saat diklik
+                profileLink.addEventListener('click', (event) => {
+                    event.preventDefault(); // Cegah aksi default
+                    window.location.href = 'signin.php'; // Mengarahkan ke signin.php
+                });
+            }
+        </script>
+
     </header>
     
     <!-- Hero Section -->
@@ -80,7 +102,7 @@
         <div class="hero-content">
             <h1>Welcome to TitipKos</h1>
             <p>Your trusted partner in finding and managing cozy accommodations</p>
-            <a href="#" class="btn-get-started">Get Started</a>
+            <a href="signup.php" class="btn-get-started">Get Started</a>
         </div>
     </section>
 
