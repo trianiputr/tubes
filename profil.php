@@ -266,6 +266,7 @@ if (isset($_POST['logout'])) {
         .logout-btn:hover {
             background-color: #5a6268;
         }
+        
     </style>
 
 </head>
@@ -352,10 +353,6 @@ if (isset($_POST['logout'])) {
             <button type="submit" name="logout" class="logout-btn">Logout</button>
         </form>
     </div>
-    <!-- Footer Section -->
-    <footer class="footer">
-        <p>&copy; 2024 TitipKos. Semua hak cipta dilindungi.</p>
-    </footer>
 
 </body>
 </html>
