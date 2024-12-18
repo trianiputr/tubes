@@ -125,3 +125,14 @@ body {
     align-items: center;
     cursor: pointer;
 }
+/* Footer Section */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+}

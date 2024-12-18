@@ -276,3 +276,15 @@ nav ul li a:hover, nav ul li a.active {
         max-width: 100%; /* Full width for smaller screens */
     }
 }
+
+/* Footer Section */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+}

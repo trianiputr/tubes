@@ -22,18 +22,39 @@
             <nav>
                 <ul>
                     <li><a href="home.php">Home</a></li>
-                    <li><a href="dashboarduser.php">Dashboard</a></li>
+                    <li><a href="Service.php">Service</a></li>
                     <li><a href="#"class="active">About</a></li>
                     <li><a href="contact.php">Contact</a></li>
                 </ul>
             </nav>
         </div>
-        <!-- Ikon Notifikasi, Search, dan Foto Profil -->
-        <div class="right-icons">
+         <!-- Ikon Notifikasi, Search, dan Foto Profil -->
+         <div class="right-icons">
             <i class="fas fa-search icon"></i>
             <i class="fas fa-bell icon"></i>
-            <img src="asset/Gambar4.png" alt="Profile" class="profile-img">
+            <a href="#" id="profile-link">
+                <img src="asset/Gambar4.png" alt="Profile" class="profile-img">
+            </a>
         </div>
+
+        <script>
+            // Simulasi status login (true jika user login, false jika tidak login)
+            const isLoggedIn = <?php echo isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] ? 'true' : 'false'; ?>;
+
+            // Elemen link profil
+            const profileLink = document.getElementById('profile-link');
+
+            // Jika sudah login, arahkan ke halaman profil.php
+            if (isLoggedIn) {
+                profileLink.setAttribute('href', 'profil.php');
+            } else {
+                // Jika belum login, arahkan ke halaman signin.php saat diklik
+                profileLink.addEventListener('click', (event) => {
+                    event.preventDefault(); // Cegah aksi default
+                    window.location.href = 'signin.php'; // Mengarahkan ke signin.php
+                });
+            }
+        </script>
     </header>
 
     <!-- Hero Section -->
@@ -81,6 +102,11 @@
             </div>
         </div>
     </section>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 TitipKos. Semua hak cipta dilindungi.</p>
+    </footer>
+
     
 </body>
 </html>

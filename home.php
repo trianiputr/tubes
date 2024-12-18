@@ -61,7 +61,7 @@
             <nav>
                 <ul>
                     <li><a href="#" class="active">Home</a></li>
-                    <li><a href="dashboarduser.php">Dashboard</a></li>
+                    <li><a href="service.php">Service</a></li>
                     <li><a href="about1.php">About</a></li>
                     <li><a href="contact.php">Contact</a></li>
                 </ul>
@@ -144,5 +144,9 @@
             </iframe>
         </div>
     </section>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 TitipKos. Semua hak cipta dilindungi.</p>
+    </footer>
 </body>
 </html>

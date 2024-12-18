@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if ($user['role'] == 'admin') {
                 header('Location: dashboardadmin.php');
             } else {
-                header('Location: home.php');
+                header('Location: profil.php');
             }
             exit();
         } else {
@@ -91,5 +91,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </p>
         </div>
     </div>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 TitipKos. Semua hak cipta dilindungi.</p>
+    </footer>
 </body>
 </html>

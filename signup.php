@@ -99,5 +99,9 @@ $conn->close();
             <p class="signup-text">Already have an account? <a href="signin.php" class="signup-link">Log In</a></p>
         </div>
     </div>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 TitipKos. Semua hak cipta dilindungi.</p>
+    </footer>
 </body>
 </html>
