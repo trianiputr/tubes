@@ -47,10 +47,8 @@
                 </ul>
             </nav>
         </div>
-        <!-- Ikon Notifikasi, Search, dan Foto Profil -->
+        <!-- Foto Profil -->
         <div class="right-icons">
-            <i class="fas fa-search icon"></i>
-            <i class="fas fa-bell icon"></i>
             <a href="#" id="profile-link">
                 <img src="asset/Gambar4.png" alt="Profile" class="profile-img">
             </a>

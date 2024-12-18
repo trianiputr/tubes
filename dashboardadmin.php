@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Admin - TitipKos</title>
     <link rel="stylesheet" href="asset/admin.css">
+    <style>
+        /* Footer Section */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .footer p {
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -148,10 +166,9 @@
         }
     }
     ?>
+</body>
     <!-- Footer Section -->
     <footer class="footer">
-        <p>&copy; 2024 TitipKos. Semua hak cipta dilindungi.</p>
+            <p>&copy; 2024 TitipKos. Semua hak cipta dilindungi.</p>
     </footer>
-</body>
-
 </html>

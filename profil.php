@@ -287,10 +287,8 @@ if (isset($_POST['logout'])) {
             </nav>
         </div>
         
-        <!-- Ikon Notifikasi, Search, dan Foto Profil -->
+        <!-- Foto Profil -->
         <div class="right-icons">
-            <i class="fas fa-search icon"></i>
-            <i class="fas fa-bell icon"></i>
             <!-- Periksa jika foto profil ada, jika tidak tampilkan gambar default -->
             <img src="<?php echo $user['profile_picture'] && file_exists($user['profile_picture']) ? htmlspecialchars($user['profile_picture']) : 'asset/Gambar4.png'; ?>" alt="Profile" class="profile-img">
         </div>
